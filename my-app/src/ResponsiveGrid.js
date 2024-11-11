@@ -12,8 +12,7 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 
 export default function ResponsiveGrid() {
-
-  const[data,setData]=useState([]);
+  const [data, setData] = useState([]);
   <Box
     component="span"
     sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
@@ -35,7 +34,7 @@ export default function ResponsiveGrid() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users").then((result) => {
       result.json().then((resp) => {
-        console.log(resp)
+        console.log(resp);
         setData(resp);
       });
     });
@@ -46,31 +45,28 @@ export default function ResponsiveGrid() {
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        columns={{ xs: 4, sm: 12, md: 12 }}
       >
-        {
-        data.map((it, index) => (
-          <Grid item xs={1} sm={4} md={4} key={index}>
+        {data.map((it, index) => (
+          <Grid item xs={4} sm={6} md={4} key={index}>
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
                 <Typography
                   gutterBottom
                   sx={{ color: "text.secondary", fontSize: 14 }}
                 >
-                 {it.name}
+                  {it.name}
                 </Typography>
                 <Typography variant="h5" component="div"></Typography>
                 <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
-             {it.username}
+                  {it.username}
                 </Typography>
-                <Typography variant="body2">
-             {it.email}
-             
-               
-                </Typography>
+                <Typography variant="body2">{it.email}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button variant="contained" color="success">
+                  Learn More
+                </Button>
               </CardActions>
             </Card>
           </Grid>
