@@ -1,16 +1,38 @@
-.App {
-  text-align: center;
+.header-bar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #ff5733, #ffbd69); /* Attractive gradient */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border-radius: 2px; /* Slightly rounded corners */
+  transition: all 0.3s ease-in-out; /* Smooth transition effect */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Add a hover effect */
+.header-bar:hover {
+  transform: scale(1.02); /* Slight zoom effect */
+  box-shadow: 0
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.header-bar-one{
+  display: flex;
+  list-style-type: none;
+}
+.header-bar-two a{
+  text-decoration: none;
+  padding: 10px 20px;
+}
+h2{
+  h2 {
+    color: #ff5733; /* Attractive color */
+    font-weight: bold; /* Make it bold */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 1px; /* Slight spacing for better readability */
+    text-align: center; /* Center the text */
+    font-family: 'Poppins', sans-serif; /* Stylish font */
   }
+  
 }
 
 .App-header {
@@ -27,12 +49,37 @@
 .App-link {
   color: #61dafb;
 }
-
+.footer {
+  width: 100%;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-bar {
+    width: 100vw; /* Ensures full width of the viewport */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-bar-one {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+  }
+  .header-bar-two{
+    padding: 10px 40px;
   }
 }

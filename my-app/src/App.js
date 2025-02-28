@@ -1,19 +1,20 @@
-
-import './App.css';
-import ResponsiveGrid from './ResponsiveGrid';
-import ResponsiveAppBar from './ResponsiveAppBar';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
 
 function App() {
   return (
     <>
-        <div className="App">
-      <ResponsiveAppBar/>
-   <h1>REACT MATERIAL</h1>
-   <ResponsiveGrid/>
-    </div>
-    
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+        </Routes>
+      </div>
     </>
-
   );
 }
 
